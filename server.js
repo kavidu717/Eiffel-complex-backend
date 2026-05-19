@@ -29,6 +29,10 @@ mongoose.connect(process.env.MONGODB_URL).then(()=>{
     console.log(err);
 })
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.use("/api/v1/user",userRouter)
 app.use("/api/v1/product",productRouter)
 app.use("/api/v1/cart",cartRouter)
